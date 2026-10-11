@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bs2gOut" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8E8E8"/>
+      <stop offset="30%" stop-color="#C0C0C0"/>
+      <stop offset="80%" stop-color="#909090"/>
+      <stop offset="100%" stop-color="#606060"/>
+    </linearGradient>
+    <linearGradient id="bs2gIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#808080"/>
+      <stop offset="50%" stop-color="#A0A0A0"/>
+      <stop offset="100%" stop-color="#D0D0D0"/>
+    </linearGradient>
+    <linearGradient id="bs2gBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6DD5F7"/>
+      <stop offset="35%" stop-color="#3AAFE5"/>
+      <stop offset="100%" stop-color="#0D6EAD"/>
+    </linearGradient>
+    <linearGradient id="bs2gHl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Silver outer ring -->
+  <circle cx="64" cy="64" r="60" fill="url(#bs2gOut)" stroke="#505050" stroke-width="1"/>
+  <!-- Silver inner bevel -->
+  <circle cx="64" cy="64" r="52" fill="url(#bs2gIn)"/>
+  <!-- Blue face -->
+  <circle cx="64" cy="64" r="46" fill="url(#bs2gBlue)"/>
+  <!-- Highlight -->
+  <ellipse cx="64" cy="46" rx="32" ry="18" fill="url(#bs2gHl)"/>
+</svg>

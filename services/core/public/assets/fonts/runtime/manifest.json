@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "families": {
+    "scenariom-sans": {
+      "scripts": ["latin", "cyrillic", "greek"],
+      "regular": "noto-sans-regular.ttf",
+      "bold": "noto-sans-bold.ttf"
+    },
+    "scenariom-arabic": {
+      "scripts": ["arabic"],
+      "regular": "noto-sans-arabic-regular.ttf",
+      "bold": "noto-sans-arabic-bold.ttf"
+    },
+    "scenariom-arabic-reading": {
+      "scripts": ["arabic"],
+      "regular": "noto-naskh-arabic-regular.ttf",
+      "bold": "noto-naskh-arabic-bold.ttf"
+    },
+    "scenariom-mono": {
+      "scripts": ["latin", "cyrillic"],
+      "regular": "jetbrains-mono-regular.ttf",
+      "bold": "jetbrains-mono-bold.ttf",
+      "webRegular": "jetbrains-mono-regular.woff2",
+      "webBold": "jetbrains-mono-bold.woff2"
+    }
+  }
+}

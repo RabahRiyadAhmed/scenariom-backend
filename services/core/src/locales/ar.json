@@ -1,0 +1,9 @@
+{
+  "themeNotFound": "لم يتم العثور على السمة.",
+  "themeAssetNotFound": "لم يتم العثور على أصل السمة.",
+  "fontAssetNotFound": "لم يتم العثور على أصل الخط.",
+  "customAssetNotFound": "لم يتم العثور على الأصل المخصص.",
+  "projectNotFound": "لم يتم العثور على المشروع.",
+  "accessDenied": "ليس لديك صلاحية لهذا الإجراء.",
+  "internalUnauthorized": "الطلب الداخلي غير مصرح به."
+}

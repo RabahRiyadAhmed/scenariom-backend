@@ -1,0 +1,13 @@
+{
+  "authInvalidCredentials": "Invalid email or password.",
+  "sessionInvalid": "Session expired or invalid.",
+  "duplicateEmail": "An account already uses this email address.",
+  "serviceUnavailable": "The requested service is unavailable.",
+  "themeServiceError": "Theme service error.",
+  "assetNotFound": "Asset not found.",
+  "validation.email": "Invalid email address.",
+  "validation.displayName": "The name must contain between 2 and 80 characters.",
+  "validation.passwordLength": "The password must contain at least 12 characters.",
+  "validation.passwordFormat": "The password must contain a letter and a number.",
+  "validation.badRequest": "Bad request."
+}

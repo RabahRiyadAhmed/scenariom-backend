@@ -1,0 +1,9 @@
+{
+  "themeNotFound": "Theme not found.",
+  "themeAssetNotFound": "Theme asset not found.",
+  "fontAssetNotFound": "Font asset not found.",
+  "customAssetNotFound": "Custom asset not found.",
+  "projectNotFound": "Project not found.",
+  "accessDenied": "Access denied for this action.",
+  "internalUnauthorized": "Unauthorized internal request."
+}

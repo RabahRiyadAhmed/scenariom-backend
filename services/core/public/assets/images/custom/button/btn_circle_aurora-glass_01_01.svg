@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- 外リング: ゴールドグラデーション（縦方向） -->
+    <linearGradient id="ag_ring" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE88A"/>
+      <stop offset="35%" stop-color="#D4A200"/>
+      <stop offset="70%" stop-color="#8A6000"/>
+      <stop offset="100%" stop-color="#C09000"/>
+    </linearGradient>
+
+    <!-- ガラス面ベース: 深い青紫の半透明 -->
+    <linearGradient id="ag_base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1040"/>
+      <stop offset="50%" stop-color="#0D0820"/>
+      <stop offset="100%" stop-color="#160C38"/>
+    </linearGradient>
+
+    <!-- オーロラ光帯1: 青→紫（斜め45度） -->
+    <linearGradient id="ag_aurora1" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00BFFF" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#4488FF" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#9933FF" stop-opacity="0.65"/>
+      <stop offset="80%" stop-color="#CC44FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF88FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- オーロラ光帯2: 緑→シアン（逆斜め） -->
+    <linearGradient id="ag_aurora2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FFB0" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#00DDAA" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#00CCFF" stop-opacity="0.5"/>
+      <stop offset="75%" stop-color="#2266FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6600CC" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- オーロラ光帯3: ピンク→マゼンタ（横方向） -->
+    <linearGradient id="ag_aurora3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF44AA" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#FF66CC" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#FF33BB" stop-opacity="0.4"/>
+      <stop offset="80%" stop-color="#AA22FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6600FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 内側暗縁（フロストガラスの内側陰影） -->
+    <radialGradient id="ag_inner_shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- 上部ハイライト（凸面ガラスの光沢） -->
+    <linearGradient id="ag_highlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 外リング インナーグロー -->
+    <linearGradient id="ag_ring_inner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#FFE080" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- クリップパス: ボタン面内部 -->
+    <clipPath id="ag_clip">
+      <circle cx="64" cy="64" r="50"/>
+    </clipPath>
+  </defs>
+
+  <!-- ====== 外リング ====== -->
+  <!-- リングベース（ゴールド） -->
+  <circle cx="64" cy="64" r="62" fill="url(#ag_ring)"/>
+  <!-- リング内側ハイライト -->
+  <circle cx="64" cy="64" r="62" fill="url(#ag_ring_inner)"/>
+  <!-- リング内側の深い暗縁（奥行き感） -->
+  <circle cx="64" cy="64" r="58" fill="#0D0820" fill-opacity="0.6"/>
+
+  <!-- ====== ガラスベース面 ====== -->
+  <circle cx="64" cy="64" r="50" fill="url(#ag_base)"/>
+
+  <!-- ====== オーロラ光帯群（クリップ内） ====== -->
+  <g clip-path="url(#ag_clip)">
+    <!-- 光帯1: 青→紫（左下から右上へ） -->
+    <rect x="14" y="14" width="100" height="100" fill="url(#ag_aurora1)"/>
+
+    <!-- 光帯2: 緑→シアン（左上から右下へ） -->
+    <rect x="14" y="14" width="100" height="100" fill="url(#ag_aurora2)"/>
+
+    <!-- 光帯3: ピンク→マゼンタ（横） -->
+    <rect x="14" y="14" width="100" height="100" fill="url(#ag_aurora3)"/>
+
+    <!-- 内側暗縁（周縁をやや暗く → 奥行き・立体感） -->
+    <circle cx="64" cy="64" r="50" fill="url(#ag_inner_shadow)"/>
+  </g>
+
+  <!-- ====== 上部ハイライト（凸レンズ光沢） ====== -->
+  <ellipse cx="64" cy="46" rx="26" ry="16" fill="url(#ag_highlight)"/>
+
+  <!-- ====== 極細ガラスエッジリム（リングとガラス面の境界） ====== -->
+  <circle cx="64" cy="64" r="50" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity="0.35"/>
+  <circle cx="64" cy="64" r="51" fill="none" stroke="#000000" stroke-width="0.6" stroke-opacity="0.4"/>
+</svg>

@@ -1,0 +1,42 @@
+# Dependencies and generated outputs
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+**/.nyc_output/
+**/src/generated/
+
+# Environment files and secrets
+.env
+**/.env
+.env.*
+**/.env.*
+!.env.example
+!**/.env.example
+!.env.*.example
+!**/.env.*.example
+
+# Logs and runtime data
+*.log
+**/*.log
+**/logs/
+**/uploads/
+**/tmp/
+**/.tmp/
+**/pids/
+*.pid
+*.pid.lock
+
+# Credentials and local tooling
+*.pem
+*.key
+*.jks
+*.p8
+*.p12
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

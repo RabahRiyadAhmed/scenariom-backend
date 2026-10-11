@@ -1,0 +1,13 @@
+{
+  "authInvalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "sessionInvalid": "انتهت الجلسة أو أنها غير صالحة.",
+  "duplicateEmail": "يوجد حساب يستخدم عنوان البريد الإلكتروني هذا بالفعل.",
+  "serviceUnavailable": "الخدمة المطلوبة غير متاحة.",
+  "themeServiceError": "حدث خطأ في خدمة السمات.",
+  "assetNotFound": "لم يتم العثور على العنصر.",
+  "validation.email": "عنوان البريد الإلكتروني غير صالح.",
+  "validation.displayName": "يجب أن يتراوح الاسم بين حرفين و80 حرفًا.",
+  "validation.passwordLength": "يجب أن تتكون كلمة المرور من 12 حرفًا على الأقل.",
+  "validation.passwordFormat": "يجب أن تحتوي كلمة المرور على حرف ورقم.",
+  "validation.badRequest": "الطلب غير صالح."
+}

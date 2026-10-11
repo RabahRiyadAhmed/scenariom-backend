@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Gold frame gradient (vertical) -->
+    <linearGradient id="wsFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="30%" stop-color="#D4A012"/>
+      <stop offset="70%" stop-color="#A07608"/>
+      <stop offset="100%" stop-color="#7A5500"/>
+    </linearGradient>
+
+    <!-- Gold inner bevel gradient (vertical) -->
+    <linearGradient id="wsFrameInner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0CC44"/>
+      <stop offset="100%" stop-color="#8A6200"/>
+    </linearGradient>
+
+    <!-- Crimson button face gradient (vertical) -->
+    <linearGradient id="wsFaceGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C43030"/>
+      <stop offset="45%" stop-color="#8B1010"/>
+      <stop offset="100%" stop-color="#5A0808"/>
+    </linearGradient>
+
+    <!-- Face highlight gradient -->
+    <linearGradient id="wsFaceHl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.00"/>
+    </linearGradient>
+
+    <!-- Wax seal gradient (crimson with gold sheen, vertical) -->
+    <linearGradient id="wsSealGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D94040"/>
+      <stop offset="40%" stop-color="#A01818"/>
+      <stop offset="100%" stop-color="#6B0808"/>
+    </linearGradient>
+
+    <!-- Seal highlight (top dome effect) -->
+    <linearGradient id="wsSealHl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.00"/>
+    </linearGradient>
+
+    <!-- Gold emblem gradient (vertical) -->
+    <linearGradient id="wsEmblemGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="50%" stop-color="#C89010"/>
+      <stop offset="100%" stop-color="#8A6000"/>
+    </linearGradient>
+
+    <!-- Seal ring gradient -->
+    <linearGradient id="wsSealRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8B020"/>
+      <stop offset="100%" stop-color="#7A5500"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== LAYER 1: Gold outer frame ===== -->
+  <rect x="0" y="0" width="128" height="128" rx="14" ry="14"
+        fill="url(#wsFrameGrad)"/>
+
+  <!-- ===== LAYER 2: Gold inner bevel ring ===== -->
+  <rect x="5" y="5" width="118" height="118" rx="10" ry="10"
+        fill="url(#wsFrameInner)"/>
+
+  <!-- ===== LAYER 3: Crimson button face ===== -->
+  <rect x="9" y="9" width="110" height="110" rx="7" ry="7"
+        fill="url(#wsFaceGrad)"/>
+
+  <!-- ===== LAYER 4: Face top highlight ===== -->
+  <rect x="9" y="9" width="110" height="55" rx="7" ry="7"
+        fill="url(#wsFaceHl)"/>
+
+  <!-- ===== LAYER 5: Wax Seal — true serrated ring (20 teeth, alternating outer r=44 / inner r=36) ===== -->
+  <!-- Points: outer tip at angles 0,18,36,...342 deg; inner valley at 9,27,45,...351 deg -->
+  <path d="
+    M108.0,64.0
+    L100.2,70.5
+    L105.6,78.2
+    L96.6,81.6
+    L99.1,90.7
+    L89.8,90.9
+    L89.0,100.2
+    L80.1,97.5
+    L76.5,106.4
+    L68.5,101.0
+    L64.0,108.0
+    L59.5,101.0
+    L51.5,106.4
+    L47.9,97.5
+    L39.0,100.2
+    L38.2,90.9
+    L28.9,90.7
+    L31.4,81.6
+    L22.4,78.2
+    L27.8,70.5
+    L20.0,64.0
+    L27.8,57.5
+    L22.4,49.8
+    L31.4,46.4
+    L28.9,37.3
+    L38.2,37.1
+    L39.0,27.8
+    L47.9,30.5
+    L51.5,21.6
+    L59.5,27.0
+    L64.0,20.0
+    L68.5,27.0
+    L76.5,21.6
+    L80.1,30.5
+    L89.0,27.8
+    L89.8,37.1
+    L99.1,37.3
+    L96.6,46.4
+    L105.6,49.8
+    L100.2,57.5
+    Z"
+        fill="url(#wsSealGrad)"
+        stroke="url(#wsSealRing)" stroke-width="1.2"/>
+
+  <!-- Seal inner circle (smooth face of wax) -->
+  <circle cx="64" cy="64" r="34"
+          fill="url(#wsSealGrad)"/>
+
+  <!-- Seal dome highlight -->
+  <ellipse cx="64" cy="52" rx="22" ry="16"
+           fill="url(#wsSealHl)"/>
+
+  <!-- ===== LAYER 6: Emblem — outer emblem ring ===== -->
+  <circle cx="64" cy="64" r="28"
+          fill="none" stroke="url(#wsEmblemGrad)" stroke-width="1.5"/>
+
+  <!-- Inner ring -->
+  <circle cx="64" cy="64" r="24"
+          fill="none" stroke="url(#wsEmblemGrad)" stroke-width="0.8"/>
+
+  <!-- ===== Diamond crest (菱形紋章) ===== -->
+  <!-- Outer diamond -->
+  <path d="M64,42 L82,64 L64,86 L46,64 Z"
+        fill="none" stroke="url(#wsEmblemGrad)" stroke-width="1.8"
+        stroke-linejoin="round"/>
+
+  <!-- Inner diamond -->
+  <path d="M64,50 L76,64 L64,78 L52,64 Z"
+        fill="url(#wsEmblemGrad)" fill-opacity="0.25"
+        stroke="url(#wsEmblemGrad)" stroke-width="1.2"/>
+
+  <!-- Cross lines inside diamond (花押) -->
+  <line x1="64" y1="42" x2="64" y2="86"
+        stroke="url(#wsEmblemGrad)" stroke-width="1.0" stroke-opacity="0.6"/>
+  <line x1="46" y1="64" x2="82" y2="64"
+        stroke="url(#wsEmblemGrad)" stroke-width="1.0" stroke-opacity="0.6"/>
+
+  <!-- Diagonal cross -->
+  <line x1="52" y1="52" x2="76" y2="76"
+        stroke="url(#wsEmblemGrad)" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="76" y1="52" x2="52" y2="76"
+        stroke="url(#wsEmblemGrad)" stroke-width="0.8" stroke-opacity="0.5"/>
+
+  <!-- Center medallion dot -->
+  <circle cx="64" cy="64" r="5"
+          fill="url(#wsEmblemGrad)"/>
+  <circle cx="64" cy="64" r="3"
+          fill="#7A5500"/>
+
+  <!-- Four small accent diamonds at outer diamond edge midpoints -->
+  <rect x="70" y="50" width="5" height="5"
+        fill="url(#wsEmblemGrad)" transform="rotate(45 72.5 52.5)"/>
+  <rect x="52" y="50" width="5" height="5"
+        fill="url(#wsEmblemGrad)" transform="rotate(45 54.5 52.5)"/>
+  <rect x="70" y="72" width="5" height="5"
+        fill="url(#wsEmblemGrad)" transform="rotate(45 72.5 74.5)"/>
+  <rect x="52" y="72" width="5" height="5"
+        fill="url(#wsEmblemGrad)" transform="rotate(45 54.5 74.5)"/>
+
+</svg>

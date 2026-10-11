@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- フレーム用グラデーション: スチール系ダークグレー/シルバー -->
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9AAABB"/>
+      <stop offset="40%" stop-color="#5A6B7E"/>
+      <stop offset="100%" stop-color="#2A3848"/>
+    </linearGradient>
+    <!-- ボタン面用グラデーション: フラットネイビー（控えめ縦グラデ） -->
+    <linearGradient id="faceGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2E5090"/>
+      <stop offset="100%" stop-color="#152B52"/>
+    </linearGradient>
+    <!-- ハイライト用 -->
+    <linearGradient id="hlGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    切り欠き角: 各角を18px×18pxの斜め45度でカット
+    フレーム外形: 8px余白確保
+      左上 (8+18, 8) → (120-18, 8) → (120, 8+18) → (120, 120-18) → (120-18, 120) → (8+18, 120) → (8, 120-18) → (8, 8+18)
+      = (26, 8) → (102, 8) → (120, 26) → (120, 102) → (102, 120) → (26, 120) → (8, 102) → (8, 26)
+  -->
+
+  <!-- フレーム: 切り欠き角八角形 -->
+  <polygon
+    points="26,8 102,8 120,26 120,102 102,120 26,120 8,102 8,26"
+    fill="url(#frameGrad)"
+  />
+
+  <!--
+    ボタン面: フレームから5pxインセット
+      左上 (31, 13) → (97, 13) → (115, 31) → (115, 97) → (97, 115) → (31, 115) → (13, 97) → (13, 31)
+  -->
+  <polygon
+    points="31,13 97,13 115,31 115,97 97,115 31,115 13,97 13,31"
+    fill="url(#faceGrad)"
+  />
+
+  <!-- ハイライト: ボタン面上半分 -->
+  <polygon
+    points="31,13 97,13 115,31 115,64 13,64 13,31"
+    fill="url(#hlGrad)"
+  />
+</svg>
