@@ -221,14 +221,56 @@ async function main() {
   await client.connect();
   try {
     for (const theme of themes) {
+      const extra = theme.extraData as Record<string, unknown>;
+      const opacity = extra.backgroundOpacity as { light?: number; dark?: number } | undefined;
+      const definition = {
+        ...theme.definition,
+        globals: {
+          spacing: { xs: 4, sm: 8, md: 16, lg: 24, xl: 32 },
+          typography: {
+            fontFamily: 'system-ui, sans-serif',
+            monoFamily: 'ui-monospace, monospace',
+            baseSize: 16,
+            lineHeight: 1.5,
+            scale: 1.2,
+          },
+          borderWidth: 1,
+          density: 'normal',
+        },
+        backgrounds: {
+          light: {
+            imageUrl: extra.backgroundImagePath,
+            opacity: opacity?.light ?? 70,
+            overlay: 12,
+            fit: 'cover',
+            position: 'center',
+          },
+          dark: {
+            imageUrl: extra.backgroundImageDarkPath ?? extra.backgroundImagePath,
+            opacity: opacity?.dark ?? 50,
+            overlay: 24,
+            fit: 'cover',
+            position: 'center',
+          },
+          slideImageUrl: extra.slideImagePath,
+        },
+      };
       await client.query(
         `INSERT INTO themes (id, slug, name, description, definition, "extraData", "isActive", "createdAt", "updatedAt")
          VALUES ($1, $2, $3, $4, $5::jsonb, $6::jsonb, true, NOW(), NOW())
          ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, definition = EXCLUDED.definition, "extraData" = EXCLUDED."extraData", "isActive" = true, "updatedAt" = NOW()`,
-        [randomUUID(), theme.slug, theme.name, theme.description, JSON.stringify(theme.definition), JSON.stringify(theme.extraData)],
+        [randomUUID(), theme.slug, theme.name, theme.description, JSON.stringify(definition), JSON.stringify(theme.extraData)],
       );
     }
     console.log(`${themes.length} thèmes de démonstration synchronisés.`);
+
+    const customDefinition = makeTheme('custom', 'Custom', lightBase, darkBase);
+    await client.query(
+      `INSERT INTO themes (id, slug, name, description, definition, "extraData", "isActive", "createdAt", "updatedAt")
+       VALUES ($1, 'custom', 'Custom', 'Shared custom theme edited from the Style Lab.', $2::jsonb, $3::jsonb, true, NOW(), NOW())
+       ON CONFLICT (slug) DO NOTHING`,
+      [randomUUID(), JSON.stringify({ ...customDefinition, globals: { spacing:{xs:4,sm:8,md:16,lg:24,xl:32}, typography:{fontFamily:'system-ui, sans-serif',monoFamily:'ui-monospace, monospace',baseSize:16,lineHeight:1.5,scale:1.2}, borderWidth:1, density:'normal' }, backgrounds:{ light:{opacity:70,overlay:12,fit:'cover',position:'center'}, dark:{opacity:50,overlay:24,fit:'cover',position:'center'} } }), JSON.stringify({ category: 'custom', type: 'custom' })],
+    );
 
     const userResult = await client.query<{ id: string; email: string }>(
       'SELECT id, email FROM users ORDER BY "createdAt" ASC LIMIT 1',

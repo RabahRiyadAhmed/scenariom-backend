@@ -14,6 +14,9 @@ export class ThemesProxyController {
     return new StreamableFile(asset.buffer, { type: asset.contentType });
   }
   @Get(':slug') findOne(@Req() req: FastifyRequest, @Param('slug') slug: string) { return this.proxy.forward(`/${encodeURIComponent(slug)}`, localeFromAcceptLanguage(req.headers['accept-language'] as string | undefined)); }
+  @Patch('custom')
+  @UseGuards(JwtAuthGuard)
+  updateCustom(@Req() req: FastifyRequest, @Body() body: unknown) { return this.proxy.update('/custom', body, localeFromAcceptLanguage(req.headers['accept-language'] as string | undefined)); }
   @Patch(':slug/background-opacity')
   @UseGuards(JwtAuthGuard)
   updateBackgroundOpacity(@Req() req: FastifyRequest, @Param('slug') slug: string, @Body() body: unknown) { return this.proxy.update(`/${encodeURIComponent(slug)}/background-opacity`, body, localeFromAcceptLanguage(req.headers['accept-language'] as string | undefined)); }
